@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Annotation profile for flexicore-territories-model" enabled="true">
+        <sourceOutputDir name="target/generated-sources/meta-model" />
+        <sourceTestOutputDir name="target/generated-sources/apt-test" />
+        <outputRelativeToContentRoot value="true" />
+        <option name="eclipselink.persistencexml" value="C:\Users\asaf\dev\flexicore\territories\flexicore-territories-modelmodel/src/main/resources/persistence.xml" />
+        <processor name="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor" />
+        <module name="flexicore-territories-model" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="flexicore-territories-model" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
