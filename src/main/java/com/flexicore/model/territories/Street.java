@@ -12,6 +12,12 @@ import java.util.List;
 public class Street extends Baseclass {
 
 	static private Street s_Singleton = new Street();
+	static public Street s() {
+		return s_Singleton;
+	}
+
+	private String externalId;
+
 	@OneToMany(targetEntity = ZipToStreet.class, mappedBy = "rightside")
 	@JsonIgnore
 	private List<ZipToStreet> zipToStreets = new ArrayList<>();
@@ -21,9 +27,6 @@ public class Street extends Baseclass {
 	@JsonIgnore
 	private List<Address> addresss = new ArrayList<>();
 
-	static public Street s() {
-		return s_Singleton;
-	}
 
 	@OneToMany(targetEntity = ZipToStreet.class, mappedBy = "rightside")
 	@JsonIgnore
@@ -52,5 +55,14 @@ public class Street extends Baseclass {
 
 	public void setAddresss(List<Address> addresss) {
 		this.addresss = addresss;
+	}
+
+	public String getExternalId() {
+		return externalId;
+	}
+
+	public Street setExternalId(String externalId) {
+		this.externalId = externalId;
+		return this;
 	}
 }

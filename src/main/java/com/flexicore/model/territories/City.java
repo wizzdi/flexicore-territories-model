@@ -13,6 +13,11 @@ import java.util.List;
 public class City extends Baseclass {
 
 	static private City s_Singleton = new City();
+	static public City s() {
+		return s_Singleton;
+	}
+	private String externalId;
+
 	@ManyToOne(targetEntity = Country.class)
 	private Country country;
 	@OneToMany(targetEntity = Street.class, mappedBy = "city")
@@ -22,9 +27,6 @@ public class City extends Baseclass {
 	@JsonIgnore
 	private List<Neighbourhood> neighbourhoods=new ArrayList<>();
 
-	static public City s() {
-		return s_Singleton;
-	}
 
 	@ManyToOne(targetEntity = Country.class)
 	public Country getCountry() {
@@ -53,6 +55,15 @@ public class City extends Baseclass {
 
 	public City setNeighbourhoods(List<Neighbourhood> neighbourhoods) {
 		this.neighbourhoods = neighbourhoods;
+		return this;
+	}
+
+	public String getExternalId() {
+		return externalId;
+	}
+
+	public City setExternalId(String externalId) {
+		this.externalId = externalId;
 		return this;
 	}
 }
