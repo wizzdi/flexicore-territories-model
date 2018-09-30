@@ -18,6 +18,8 @@ public class Neighbourhood extends Baseclass {
         return s_Singleton;
     }
 
+    private String externalId;
+
     @OneToMany(targetEntity = Address.class,mappedBy = "neighbourhood",cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     @JsonIgnore
     private List<Address> addresses=new ArrayList<>();
@@ -44,6 +46,15 @@ public class Neighbourhood extends Baseclass {
 
     public Neighbourhood setAddresses(List<Address> addresses) {
         this.addresses = addresses;
+        return this;
+    }
+
+    public String getExternalId() {
+        return externalId;
+    }
+
+    public Neighbourhood setExternalId(String externalId) {
+        this.externalId = externalId;
         return this;
     }
 }
