@@ -18,6 +18,9 @@ public class City extends Baseclass {
 	@OneToMany(targetEntity = Street.class, mappedBy = "city")
 	@JsonIgnore
 	private List<Street> streets = new ArrayList<>();
+	@OneToMany(targetEntity = Neighbourhood.class, mappedBy = "city")
+	@JsonIgnore
+	private List<Neighbourhood> neighbourhoods=new ArrayList<>();
 
 	static public City s() {
 		return s_Singleton;
@@ -40,5 +43,16 @@ public class City extends Baseclass {
 
 	public void setStreets(List<Street> streets) {
 		this.streets = streets;
+	}
+
+	@OneToMany(targetEntity = Neighbourhood.class, mappedBy = "city")
+	@JsonIgnore
+	public List<Neighbourhood> getNeighbourhoods() {
+		return neighbourhoods;
+	}
+
+	public City setNeighbourhoods(List<Neighbourhood> neighbourhoods) {
+		this.neighbourhoods = neighbourhoods;
+		return this;
 	}
 }

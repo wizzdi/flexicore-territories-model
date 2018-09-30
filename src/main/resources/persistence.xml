@@ -12,6 +12,7 @@
         <class>com.flexicore.model.territories.Address</class>
         <class>com.flexicore.model.territories.ZipToStreet</class>
         <class>com.flexicore.model.territories.Country</class>
+        <class>com.flexicore.model.territories.Neighbourhood</class>
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
     </persistence-unit>
 </persistence>

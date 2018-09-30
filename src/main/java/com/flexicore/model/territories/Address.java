@@ -15,6 +15,9 @@ public class Address extends Baseclass {
 	private int floor;
 	@ManyToOne(targetEntity = Street.class)
 	private Street street;
+
+	@ManyToOne(targetEntity = Neighbourhood.class)
+	private Neighbourhood neighbourhood;
 	private int number;
 
 
@@ -47,5 +50,13 @@ public class Address extends Baseclass {
 		this.number = number;
 	}
 
+	@ManyToOne(targetEntity = Neighbourhood.class)
+	public Neighbourhood getNeighbourhood() {
+		return neighbourhood;
+	}
 
+	public Address setNeighbourhood(Neighbourhood neighbourhood) {
+		this.neighbourhood = neighbourhood;
+		return this;
+	}
 }
