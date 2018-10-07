@@ -19,6 +19,7 @@ public class Neighbourhood extends Baseclass {
     }
 
     private String externalId;
+    private String nameHe;
 
     @OneToMany(targetEntity = Address.class,mappedBy = "neighbourhood",cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     @JsonIgnore
@@ -55,6 +56,15 @@ public class Neighbourhood extends Baseclass {
 
     public Neighbourhood setExternalId(String externalId) {
         this.externalId = externalId;
+        return this;
+    }
+
+    public String getNameHe() {
+        return nameHe;
+    }
+
+    public Neighbourhood setNameHe(String nameHe) {
+        this.nameHe = nameHe;
         return this;
     }
 }

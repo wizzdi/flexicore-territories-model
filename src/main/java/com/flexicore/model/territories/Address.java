@@ -3,16 +3,12 @@ package com.flexicore.model.territories;
 import com.flexicore.model.Baseclass;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import java.util.ArrayList;
 
 @Entity
 public class Address extends Baseclass {
 
 	static private Address s_Singleton = new Address();
-	private int floor;
+	private int floorForAddress;
 	@ManyToOne(targetEntity = Street.class)
 	private Street street;
 
@@ -25,12 +21,12 @@ public class Address extends Baseclass {
 		return s_Singleton;
 	}
 
-	public int getFloor() {
-		return floor;
+	public int getFloorForAddress() {
+		return floorForAddress;
 	}
 
-	public void setFloor(int floor) {
-		this.floor = floor;
+	public void setFloorForAddress(int floorForAddress) {
+		this.floorForAddress = floorForAddress;
 	}
 
 	@ManyToOne(targetEntity = Street.class)
