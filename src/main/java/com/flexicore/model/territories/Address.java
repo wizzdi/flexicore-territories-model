@@ -15,6 +15,7 @@ public class Address extends Baseclass {
 	@ManyToOne(targetEntity = Neighbourhood.class)
 	private Neighbourhood neighbourhood;
 	private int number;
+	private String externalId;
 
 
 	static public Address s() {
@@ -54,5 +55,14 @@ public class Address extends Baseclass {
 	public Address setNeighbourhood(Neighbourhood neighbourhood) {
 		this.neighbourhood = neighbourhood;
 		return this;
+	}
+
+	public String getExternalId() {
+		return externalId;
+	}
+
+	public <T extends Address> T setExternalId(String externalId) {
+		this.externalId = externalId;
+		return (T) this;
 	}
 }

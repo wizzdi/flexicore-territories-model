@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.flexicore</groupId>
     <artifactId>flexicore-territories-model</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <distributionManagement>
         <repository>
             <id>flexicore-local</id>
