@@ -17,6 +17,8 @@ public class Country extends Baseclass {
 		return s_Singleton;
 	}
 
+	private String countryCode;
+
 	public Country() {
 	}
 
@@ -37,5 +39,14 @@ public class Country extends Baseclass {
 
 	public void setCitys(List<City> citys) {
 		this.citys = citys;
+	}
+
+	public String getCountryCode() {
+		return countryCode;
+	}
+
+	public <T extends Country> T setCountryCode(String countryCode) {
+		this.countryCode = countryCode;
+		return (T) this;
 	}
 }
