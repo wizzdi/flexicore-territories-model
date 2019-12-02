@@ -4,6 +4,8 @@ import com.flexicore.model.Baseclass;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.flexicore.security.SecurityContext;
+
 import javax.persistence.ManyToOne;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,8 +14,13 @@ import java.util.List;
 public class Street extends Baseclass {
 
 	static private Street s_Singleton = new Street();
-	static public Street s() {
-		return s_Singleton;
+	static public Street s() { return s_Singleton; }
+
+	public Street() {
+	}
+
+	public Street(String name, SecurityContext securityContext) {
+		super(name, securityContext);
 	}
 
 	private String externalId;

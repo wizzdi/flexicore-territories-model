@@ -1,6 +1,8 @@
 package com.flexicore.model.territories;
 
 import com.flexicore.model.Baseclass;
+import com.flexicore.security.SecurityContext;
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
@@ -8,6 +10,10 @@ import javax.persistence.ManyToOne;
 public class Address extends Baseclass {
 
 	static private Address s_Singleton = new Address();
+	static public Address s() {
+		return s_Singleton;
+	}
+
 	private int floorForAddress;
 	@ManyToOne(targetEntity = Street.class)
 	private Street street;
@@ -18,9 +24,11 @@ public class Address extends Baseclass {
 	private int number;
 	private String externalId;
 
+	public Address() {
+	}
 
-	static public Address s() {
-		return s_Singleton;
+	public Address(String name, SecurityContext securityContext) {
+		super(name, securityContext);
 	}
 
 	public int getFloorForAddress() {

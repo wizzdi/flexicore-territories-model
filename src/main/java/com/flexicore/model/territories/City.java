@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.flexicore.security.SecurityContext;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +17,14 @@ public class City extends Baseclass {
 	static public City s() {
 		return s_Singleton;
 	}
+
+	public City() {
+	}
+
+	public City(String name, SecurityContext securityContext) {
+		super(name, securityContext);
+	}
+
 	private String externalId;
 
 	@ManyToOne(targetEntity = Country.class)

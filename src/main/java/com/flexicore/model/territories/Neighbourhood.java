@@ -2,6 +2,7 @@ package com.flexicore.model.territories;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.flexicore.model.Baseclass;
+import com.flexicore.security.SecurityContext;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -16,6 +17,13 @@ public class Neighbourhood extends Baseclass {
     static private Neighbourhood s_Singleton = new Neighbourhood();
     static public Neighbourhood s() {
         return s_Singleton;
+    }
+
+    public Neighbourhood() {
+    }
+
+    public Neighbourhood(String name, SecurityContext securityContext) {
+        super(name, securityContext);
     }
 
     private String externalId;
