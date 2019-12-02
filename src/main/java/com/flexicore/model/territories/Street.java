@@ -18,25 +18,13 @@ public class Street extends Baseclass {
 
 	private String externalId;
 
-	@OneToMany(targetEntity = ZipToStreet.class, mappedBy = "rightside")
-	@JsonIgnore
-	private List<ZipToStreet> zipToStreets = new ArrayList<>();
+
 	@ManyToOne(targetEntity = City.class)
 	private City city;
 	@OneToMany(targetEntity = Address.class, mappedBy = "street")
 	@JsonIgnore
 	private List<Address> addresss = new ArrayList<>();
 
-
-	@OneToMany(targetEntity = ZipToStreet.class, mappedBy = "rightside")
-	@JsonIgnore
-	public List<ZipToStreet> getZipToStreets() {
-		return zipToStreets;
-	}
-
-	public void setZipToStreets(List<ZipToStreet> zipToStreets) {
-		this.zipToStreets = zipToStreets;
-	}
 
 	@ManyToOne(targetEntity = City.class)
 	public City getCity() {
