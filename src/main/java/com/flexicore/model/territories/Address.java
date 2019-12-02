@@ -14,8 +14,7 @@ public class Address extends Baseclass {
 
 	@ManyToOne(targetEntity = Neighbourhood.class)
 	private Neighbourhood neighbourhood;
-	@ManyToOne(targetEntity = Zip.class)
-	private Zip zip;
+	private String zipCode;
 	private int number;
 	private String externalId;
 
@@ -68,13 +67,12 @@ public class Address extends Baseclass {
 		return (T) this;
 	}
 
-	@ManyToOne(targetEntity = Zip.class)
-	public Zip getZip() {
-		return zip;
+	public String getZipCode() {
+		return zipCode;
 	}
 
-	public <T extends Address> T setZip(Zip zip) {
-		this.zip = zip;
+	public <T extends Address> T setZipCode(String zipCode) {
+		this.zipCode = zipCode;
 		return (T) this;
 	}
 }
