@@ -30,6 +30,10 @@ public class Country extends Baseclass {
 	@JsonIgnore
 	private List<City> citys = new ArrayList<>();
 
+	@OneToMany(targetEntity = State.class, mappedBy = "country")
+	@JsonIgnore
+	private List<State> states = new ArrayList<>();
+
 
 	@OneToMany(targetEntity = City.class, mappedBy = "country")
 	@JsonIgnore
@@ -47,6 +51,17 @@ public class Country extends Baseclass {
 
 	public <T extends Country> T setCountryCode(String countryCode) {
 		this.countryCode = countryCode;
+		return (T) this;
+	}
+
+	@OneToMany(targetEntity = State.class, mappedBy = "country")
+	@JsonIgnore
+	public List<State> getStates() {
+		return states;
+	}
+
+	public <T extends Country> T setStates(List<State> states) {
+		this.states = states;
 		return (T) this;
 	}
 }

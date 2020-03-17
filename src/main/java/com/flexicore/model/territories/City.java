@@ -29,6 +29,8 @@ public class City extends Baseclass {
 
 	@ManyToOne(targetEntity = Country.class)
 	private Country country;
+	@ManyToOne
+	private State state;
 	@OneToMany(targetEntity = Street.class, mappedBy = "city")
 	@JsonIgnore
 	private List<Street> streets = new ArrayList<>();
@@ -74,5 +76,14 @@ public class City extends Baseclass {
 	public City setExternalId(String externalId) {
 		this.externalId = externalId;
 		return this;
+	}
+
+	public State getState() {
+		return state;
+	}
+
+	public <T extends City> T setState(State state) {
+		this.state = state;
+		return (T) this;
 	}
 }

@@ -11,6 +11,7 @@
         <class>com.flexicore.model.territories.Address</class>
         <class>com.flexicore.model.territories.Country</class>
         <class>com.flexicore.model.territories.Neighbourhood</class>
+        <class>com.flexicore.model.territories.State</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
     </persistence-unit>
 </persistence>
