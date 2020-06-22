@@ -36,8 +36,7 @@ public class City extends Baseclass {
 	private List<Street> streets = new ArrayList<>();
 	@OneToMany(targetEntity = Neighbourhood.class, mappedBy = "city")
 	@JsonIgnore
-	private List<Neighbourhood> neighbourhoods=new ArrayList<>();
-
+	private List<Neighbourhood> neighbourhoods = new ArrayList<>();
 
 	@ManyToOne(targetEntity = Country.class)
 	public Country getCountry() {

@@ -34,7 +34,6 @@ public class Country extends Baseclass {
 	@JsonIgnore
 	private List<State> states = new ArrayList<>();
 
-
 	@OneToMany(targetEntity = City.class, mappedBy = "country")
 	@JsonIgnore
 	public List<City> getCitys() {

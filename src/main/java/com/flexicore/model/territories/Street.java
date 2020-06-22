@@ -14,7 +14,9 @@ import java.util.List;
 public class Street extends Baseclass {
 
 	static private Street s_Singleton = new Street();
-	static public Street s() { return s_Singleton; }
+	static public Street s() {
+		return s_Singleton;
+	}
 
 	public Street() {
 	}
@@ -25,13 +27,11 @@ public class Street extends Baseclass {
 
 	private String externalId;
 
-
 	@ManyToOne(targetEntity = City.class)
 	private City city;
 	@OneToMany(targetEntity = Address.class, mappedBy = "street")
 	@JsonIgnore
 	private List<Address> addresss = new ArrayList<>();
-
 
 	@ManyToOne(targetEntity = City.class)
 	public City getCity() {

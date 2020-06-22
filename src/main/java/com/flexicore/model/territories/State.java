@@ -31,10 +31,8 @@ public class State extends Baseclass {
 	private Country country;
 
 	@JsonIgnore
-	@OneToMany(targetEntity = City.class,mappedBy = "state")
-	private List<City> cities=new ArrayList<>();
-
-
+	@OneToMany(targetEntity = City.class, mappedBy = "state")
+	private List<City> cities = new ArrayList<>();
 
 	@ManyToOne(targetEntity = Country.class)
 	public Country getCountry() {
@@ -45,7 +43,6 @@ public class State extends Baseclass {
 		this.country = country;
 	}
 
-
 	public String getExternalId() {
 		return externalId;
 	}
@@ -55,7 +52,7 @@ public class State extends Baseclass {
 		return this;
 	}
 	@JsonIgnore
-	@OneToMany(targetEntity = City.class,mappedBy = "state")
+	@OneToMany(targetEntity = City.class, mappedBy = "state")
 	public List<City> getCities() {
 		return cities;
 	}
