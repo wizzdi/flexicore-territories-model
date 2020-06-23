@@ -9,11 +9,6 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Address extends Baseclass {
 
-	static private Address s_Singleton = new Address();
-	static public Address s() {
-		return s_Singleton;
-	}
-
 	private int floorForAddress;
 	@ManyToOne(targetEntity = Street.class)
 	private Street street;

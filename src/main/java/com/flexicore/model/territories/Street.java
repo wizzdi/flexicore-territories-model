@@ -13,10 +13,6 @@ import java.util.List;
 @Entity
 public class Street extends Baseclass {
 
-	static private Street s_Singleton = new Street();
-	static public Street s() {
-		return s_Singleton;
-	}
 
 	public Street() {
 	}

@@ -12,11 +12,6 @@ import java.util.List;
 @Entity
 public class Country extends Baseclass {
 
-	static private Country s_Singleton = new Country();
-	static public Country s() {
-		return s_Singleton;
-	}
-
 	private String countryCode;
 
 	public Country() {

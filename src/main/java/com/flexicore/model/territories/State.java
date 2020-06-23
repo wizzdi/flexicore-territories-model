@@ -13,10 +13,6 @@ import java.util.List;
 @Entity
 public class State extends Baseclass {
 
-	static private State s_Singleton = new State();
-	static public State s() {
-		return s_Singleton;
-	}
 
 	public State() {
 	}

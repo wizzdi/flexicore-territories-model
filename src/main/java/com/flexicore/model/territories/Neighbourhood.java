@@ -14,10 +14,6 @@ import java.util.List;
 @Entity
 public class Neighbourhood extends Baseclass {
 
-	static private Neighbourhood s_Singleton = new Neighbourhood();
-	static public Neighbourhood s() {
-		return s_Singleton;
-	}
 
 	public Neighbourhood() {
 	}
