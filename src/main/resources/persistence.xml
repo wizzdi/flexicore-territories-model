@@ -12,6 +12,23 @@
         <class>com.flexicore.model.territories.Country</class>
         <class>com.flexicore.model.territories.Neighbourhood</class>
         <class>com.flexicore.model.territories.State</class>
+        <class>com.flexicore.territories.request.AddressFiltering</class>
+        <class>com.flexicore.territories.request.CityFiltering</class>
+        <class>com.flexicore.territories.request.CountryFiltering</class>
+        <class>com.flexicore.territories.request.NeighbourhoodFiltering</class>
+        <class>com.flexicore.territories.request.StateFiltering</class>
+        <class>com.flexicore.territories.request.StreetFiltering</class>
+        <class>com.flexicore.territories.request.AddressExternalIdRef</class>
+        <class>com.flexicore.territories.request.CityIdRef</class>
+        <class>com.flexicore.territories.request.CountryIdRef</class>
+        <class>com.flexicore.territories.request.FloorIdRef</class>
+        <class>com.flexicore.territories.request.NeighbourhoodExternalIdRef</class>
+        <class>com.flexicore.territories.request.NeighbourhoodIdRef</class>
+        <class>com.flexicore.territories.request.AptNumberRef</class>
+        <class>com.flexicore.territories.request.StateIdRef</class>
+        <class>com.flexicore.territories.request.StreetExternalIdRef</class>
+        <class>com.flexicore.territories.request.StreetIdRef</class>
+        <class>com.flexicore.territories.request.ZipCodeIdRef</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
     </persistence-unit>
 </persistence>
