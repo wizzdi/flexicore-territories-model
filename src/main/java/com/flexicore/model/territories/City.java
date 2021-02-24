@@ -5,20 +5,17 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.flexicore.security.SecurityContext;
+import com.flexicore.model.Basic;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class City extends Baseclass {
+public class City extends Basic {
 
 	public City() {
 	}
 
-	public City(String name, SecurityContext securityContext) {
-		super(name, securityContext);
-	}
 
 	private String externalId;
 
@@ -32,6 +29,8 @@ public class City extends Baseclass {
 	@OneToMany(targetEntity = Neighbourhood.class, mappedBy = "city")
 	@JsonIgnore
 	private List<Neighbourhood> neighbourhoods = new ArrayList<>();
+	@ManyToOne(targetEntity = Baseclass.class)
+	private Baseclass security;
 
 	@ManyToOne(targetEntity = Country.class)
 	public Country getCountry() {
@@ -72,12 +71,23 @@ public class City extends Baseclass {
 		return this;
 	}
 
+	@ManyToOne(targetEntity = State.class)
 	public State getState() {
 		return state;
 	}
 
 	public <T extends City> T setState(State state) {
 		this.state = state;
+		return (T) this;
+	}
+
+	@ManyToOne(targetEntity = Baseclass.class)
+	public Baseclass getSecurity() {
+		return security;
+	}
+
+	public <T extends City> T setSecurity(Baseclass security) {
+		this.security = security;
 		return (T) this;
 	}
 }
