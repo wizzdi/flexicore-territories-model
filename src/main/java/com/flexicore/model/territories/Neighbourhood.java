@@ -3,6 +3,7 @@ package com.flexicore.model.territories;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.flexicore.model.Baseclass;
 import com.flexicore.model.Basic;
+import com.flexicore.model.SecuredBasic;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Neighbourhood extends Basic {
+public class Neighbourhood extends SecuredBasic {
 
 
 	public Neighbourhood() {
@@ -20,9 +21,6 @@ public class Neighbourhood extends Basic {
 
 
 	private String externalId;
-	@ManyToOne(targetEntity = Baseclass.class)
-	private Baseclass security;
-
 	@OneToMany(targetEntity = Address.class, mappedBy = "neighbourhood", cascade = {
 			CascadeType.MERGE, CascadeType.PERSIST})
 	@JsonIgnore
@@ -62,13 +60,4 @@ public class Neighbourhood extends Basic {
 		return this;
 	}
 
-	@ManyToOne(targetEntity = Baseclass.class)
-	public Baseclass getSecurity() {
-		return security;
-	}
-
-	public <T extends Neighbourhood> T setSecurity(Baseclass security) {
-		this.security = security;
-		return (T) this;
-	}
 }

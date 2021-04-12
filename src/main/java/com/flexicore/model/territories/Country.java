@@ -1,24 +1,20 @@
 package com.flexicore.model.territories;
 
-import com.flexicore.model.Baseclass;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.flexicore.model.Basic;
+import com.flexicore.model.SecuredBasic;
 
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Country extends Basic {
+public class Country extends SecuredBasic {
 
 	public Country() {
 	}
 
 	private String countryCode;
-	@ManyToOne(targetEntity = Baseclass.class)
-	private Baseclass security;
 
 
 
@@ -58,16 +54,6 @@ public class Country extends Basic {
 
 	public <T extends Country> T setStates(List<State> states) {
 		this.states = states;
-		return (T) this;
-	}
-
-	@ManyToOne(targetEntity = Baseclass.class)
-	public Baseclass getSecurity() {
-		return security;
-	}
-
-	public <T extends Country> T setSecurity(Baseclass security) {
-		this.security = security;
 		return (T) this;
 	}
 }

@@ -6,12 +6,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.flexicore.model.Basic;
+import com.flexicore.model.SecuredBasic;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class City extends Basic {
+public class City extends SecuredBasic {
 
 	public City() {
 	}
@@ -29,8 +30,7 @@ public class City extends Basic {
 	@OneToMany(targetEntity = Neighbourhood.class, mappedBy = "city")
 	@JsonIgnore
 	private List<Neighbourhood> neighbourhoods = new ArrayList<>();
-	@ManyToOne(targetEntity = Baseclass.class)
-	private Baseclass security;
+
 
 	@ManyToOne(targetEntity = Country.class)
 	public Country getCountry() {
@@ -81,13 +81,4 @@ public class City extends Basic {
 		return (T) this;
 	}
 
-	@ManyToOne(targetEntity = Baseclass.class)
-	public Baseclass getSecurity() {
-		return security;
-	}
-
-	public <T extends City> T setSecurity(Baseclass security) {
-		this.security = security;
-		return (T) this;
-	}
 }

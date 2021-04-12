@@ -3,6 +3,7 @@ package com.flexicore.model.territories;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.flexicore.model.Baseclass;
 import com.flexicore.model.Basic;
+import com.flexicore.model.SecuredBasic;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -11,14 +12,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class State extends Basic {
+public class State extends SecuredBasic {
 
 
 	public State() {
 	}
 
-	@ManyToOne(targetEntity = Baseclass.class)
-	private Baseclass security;
 	private String externalId;
 
 	@ManyToOne(targetEntity = Country.class)
@@ -53,16 +52,6 @@ public class State extends Basic {
 
 	public <T extends State> T setCities(List<City> cities) {
 		this.cities = cities;
-		return (T) this;
-	}
-
-	@ManyToOne(targetEntity = Baseclass.class)
-	public Baseclass getSecurity() {
-		return security;
-	}
-
-	public <T extends State> T setSecurity(Baseclass security) {
-		this.security = security;
 		return (T) this;
 	}
 }

@@ -2,12 +2,13 @@ package com.flexicore.model.territories;
 
 import com.flexicore.model.Baseclass;
 import com.flexicore.model.Basic;
+import com.flexicore.model.SecuredBasic;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Address extends Basic {
+public class Address extends SecuredBasic {
 
 
 
@@ -20,8 +21,6 @@ public class Address extends Basic {
 	private String zipCode;
 	private int number;
 	private String externalId;
-	@ManyToOne(targetEntity = Baseclass.class)
-	private Baseclass security;
 
 	public Address() {
 	}
@@ -79,13 +78,4 @@ public class Address extends Basic {
 		return (T) this;
 	}
 
-	@ManyToOne(targetEntity = Baseclass.class)
-	public Baseclass getSecurity() {
-		return security;
-	}
-
-	public <T extends Address> T setSecurity(Baseclass security) {
-		this.security = security;
-		return (T) this;
-	}
 }

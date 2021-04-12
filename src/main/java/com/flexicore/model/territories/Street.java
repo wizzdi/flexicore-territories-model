@@ -5,21 +5,20 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.flexicore.model.Basic;
+import com.flexicore.model.SecuredBasic;
 
 import javax.persistence.ManyToOne;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Street extends Basic {
+public class Street extends SecuredBasic {
 
 
 	public Street() {
 	}
 
 
-	@ManyToOne(targetEntity = Baseclass.class)
-	private Baseclass security;
 	private String externalId;
 
 	@ManyToOne(targetEntity = City.class)
@@ -56,13 +55,4 @@ public class Street extends Basic {
 		return this;
 	}
 
-	@ManyToOne(targetEntity = Baseclass.class)
-	public Baseclass getSecurity() {
-		return security;
-	}
-
-	public <T extends Street> T setSecurity(Baseclass security) {
-		this.security = security;
-		return (T) this;
-	}
 }
