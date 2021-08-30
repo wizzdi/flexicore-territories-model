@@ -22,7 +22,7 @@ public class City extends SecuredBasic {
 
 	@ManyToOne(targetEntity = Country.class)
 	private Country country;
-	@ManyToOne
+	@ManyToOne(targetEntity = State.class)
 	private State state;
 	@OneToMany(targetEntity = Street.class, mappedBy = "city")
 	@JsonIgnore
