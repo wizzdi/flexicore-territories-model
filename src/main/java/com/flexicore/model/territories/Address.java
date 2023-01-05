@@ -1,7 +1,5 @@
 package com.flexicore.model.territories;
 
-import com.flexicore.model.Baseclass;
-import com.flexicore.model.Basic;
 import com.flexicore.model.SecuredBasic;
 
 import javax.persistence.Entity;
@@ -19,7 +17,7 @@ public class Address extends SecuredBasic {
 	@ManyToOne(targetEntity = Neighbourhood.class)
 	private Neighbourhood neighbourhood;
 	private String zipCode;
-	private int number;
+	private String houseNumber;
 	private String externalId;
 
 	public Address() {
@@ -42,12 +40,12 @@ public class Address extends SecuredBasic {
 		this.street = street;
 	}
 
-	public int getNumber() {
-		return number;
+	public String getHouseNumber() {
+		return houseNumber;
 	}
 
-	public void setNumber(int number) {
-		this.number = number;
+	public void setHouseNumber(String houseNumber) {
+		this.houseNumber = houseNumber;
 	}
 
 	@ManyToOne(targetEntity = Neighbourhood.class)
